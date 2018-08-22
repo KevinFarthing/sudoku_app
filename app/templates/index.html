@@ -4,7 +4,14 @@
 
     <table id="grid">
         {% for i in range(9) %}
-            {% for  in range(9) %}
+        <tr>
+            {% for j in range(9) %}
+                <td>
+                    <input id="cell-0" type="number" value="5">
+                </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
 
         <tr>
             <td>
