@@ -1,0 +1,1 @@
+Array.from(document.querySelectorAll('input[type="number"]')).filter(x => x.value.length === 0).forEach(x => x.disabled = true);
