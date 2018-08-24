@@ -2,29 +2,35 @@
 {% block content %}
 
 <div class="container">
-
+    <form method="post">
     <table id="grid">
         {% for i in range(9) %}
         <tr id="row{{ i }}">
             {% for j in range(9) %}
                 <td>
                     {% if sudoku[i][j]==0 %}
-                    <input id="row{{ i }} col{{ j }}" type="number">
+                    <input class='cell' name="row{{ i }}col{{ j }}" type="number">
                     {% else %}
-                    <input id="row{{ i }} col{{ j }}" type="number" value="{{ sudoku[i][j] }}" disabled>
+                    <input class='cell' name="row{{ i }}col{{ j }}" type="number" value="{{ sudoku[i][j] }}">
                     {% endif %}
                 </td>
             {% endfor %}
         </tr>
         {% endfor %}
     </table>
+    
+    <input type="submit" class="btn btn-info">
+</form>
+<form action="/upload" method="post" enctype="multipart/form-data" >
+    <span class="btn btn-default btn-file">
+      Browse <input type="file" name="image">
+    </span>
 
+  <input type="submit" value="Upload your image" class="btn btn-primary">
+</form>
 </div>
 
 
-<button type="button" class="btn btn-info">Solve</button>
-
-<button type="button" class="btn btn-danger">Check</button>
 
 
 {% endblock %}

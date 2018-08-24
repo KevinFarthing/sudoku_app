@@ -14,7 +14,7 @@
             vertical-align: middle;
         }
 
-        input {
+        .cell {
             color: #000000;
             padding: 0;
             border: 0;
